@@ -1,7 +1,7 @@
 // Second Largest Element.
 // Given an array of integers nums, return the second-largest element in the array. If the second-largest element does not exist, return -1.
 
-// Example 1
+// Example :
 
 // Input: nums = [8, 8, 7, 6, 5]
 

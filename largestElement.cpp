@@ -1,7 +1,7 @@
 // Largest Element
 // Given an array of integers nums, return the value of the largest element in the array.
 
-// Example 1
+// Example :
 
 // Input: nums = [3, 3, 6, 1]
 

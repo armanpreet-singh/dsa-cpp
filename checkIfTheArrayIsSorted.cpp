@@ -1,7 +1,7 @@
 // Check if the Array is Sorted.
 //Given an array nums of n integers, return true if the array nums is sorted in non-decreasing order or else false.
 
-// Example 1
+// Example :
 
 // Input : nums = [1, 2, 3, 4, 5]
 
