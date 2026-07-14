@@ -4,9 +4,7 @@
 // Example :
 
 // Input: nums = [3, 3, 6, 1]
-
 // Output: 6
-
 // Explanation: The largest element in array is 6
 
 class Solution {
