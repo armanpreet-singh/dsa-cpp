@@ -59,4 +59,41 @@ public:
         return ans;
     }
 };
-explain this
+
+
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums, int k) {
+
+        unordered_map<long long, int> preSumMap;     // Prefix Sum + HashMap (Works for negatives too)
+        long long sum = 0;
+        int maxLen = 0;
+
+        for (int i = 0; i < nums.size(); i++) {
+
+            // Calculate prefix sum
+            sum += nums[i];
+
+            // If prefix sum itself equals k
+            if (sum == k) {
+                maxLen = max(maxLen, i + 1);
+            }
+
+            // Required prefix sum
+            long long rem = sum - k;
+
+            // If it exists, update answer
+            if (preSumMap.find(rem) != preSumMap.end()) {
+                int len = i - preSumMap[rem];
+                maxLen = max(maxLen, len);
+            }
+
+            // Store first occurrence only
+            if (preSumMap.find(sum) == preSumMap.end()) {
+                preSumMap[sum] = i;
+            }
+        }
+
+        return maxLen;
+    }
+};
