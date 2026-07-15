@@ -16,7 +16,7 @@ public:
         int maxLen = 0;
         int n = nums.size();
 
-        while (right < n) {                                    // Using While Loop 
+        while (right < n) {                                    // Using While Loop.
 
             // Shrink the window 
             while (left <= right && sum > k) {
@@ -38,3 +38,25 @@ public:
         return maxLen;
     }
 };
+
+
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums, int k) {
+        int left = 0, sum = 0, ans = 0;
+
+        for (int right = 0; right < nums.size(); right++) {     // Using For Loop.
+            sum += nums[right];
+
+            while (left <= right && sum > k) {
+                sum -= nums[left++];
+            }
+
+            if (sum == k)
+                ans = max(ans, right - left + 1);
+        }
+
+        return ans;
+    }
+};
+explain this
