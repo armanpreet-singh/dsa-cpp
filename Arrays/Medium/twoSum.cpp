@@ -52,8 +52,7 @@ public:
         int r = nums.size()-1;
         int sum = 0;
         int n = nums.size();
-         vector<int> indices;
-
+        
        while(l<n && r<n) {
         sum = nums[r] + nums[l];
 if(sum<target && l<r){
