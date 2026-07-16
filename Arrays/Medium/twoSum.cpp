@@ -43,3 +43,29 @@ public:
         return {};
     }
 };
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        sort(nums.begin(), nums.end());                               // Using Sort().
+        int l = 0;
+        int r = nums.size()-1;
+        int sum = 0;
+        int n = nums.size();
+         vector<int> indices;
+
+       while(l<n && r<n) {
+        sum = nums[r] + nums[l];
+if(sum<target && l<r){
+    l++;
+}
+r++;
+
+if(sum == target){                                                    // To Check Whether The Sum Exists Within The Array.
+return "YES";
+}
+ return "NO";
+       }
+      
+    }
+};
