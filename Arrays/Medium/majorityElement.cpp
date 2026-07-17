@@ -62,6 +62,30 @@ public:
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+        int element = 0;
+        int count = 0;
+        int i = 0;
+
+        while (i < nums.size()) {                       // Using While Loop.
+            if (count == 0) {
+                element = nums[i];
+            }
+
+            if (nums[i] == element)
+                count++;
+            else
+                count--;
+
+            i++;
+        }
+
+        return element;
+    }
+};
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
         int candidate = 0;                                // If Problem Doesn't Guarantee A Majority Element.
         int count = 0;
 
