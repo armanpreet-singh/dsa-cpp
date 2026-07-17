@@ -105,3 +105,41 @@ public:
         return (count > nums.size() / 2) ? candidate : -1;
     }
 };
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int element = 0;
+        int count = 0;
+        int i = 0;
+
+        // First pass: Find candidate
+        while (i < nums.size()) {
+            if (count == 0) {
+                element = nums[i];
+            }
+
+            if (nums[i] == element)
+                count++;
+            else
+                count--;
+
+            i++;
+        }
+
+        // Second pass: Verify candidate
+        count = 0;
+        i = 0;
+
+        while (i < nums.size()) {                                      // If the majority element is not guaranteed.
+            if (nums[i] == element)
+                count++;
+            i++;
+        }
+
+        if (count > nums.size() / 2)
+            return element;
+
+        return -1; // No majority element
+    }
+};
