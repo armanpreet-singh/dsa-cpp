@@ -34,3 +34,24 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    vector<int> leaders(vector<int>& nums) {
+        vector<int> ans;
+
+        int n = nums.size();
+        int maxi = INT_MIN;
+
+        for(int i = n - 1; i >= 0; i--) {                 // Traverse from right to left while maintaining the maximum element seen so far.
+            if(nums[i] > maxi) {
+                ans.push_back(nums[i]);
+                maxi = nums[i];
+            }
+        }
+
+        reverse(ans.begin(), ans.end());
+
+        return ans;
+    }
+};
