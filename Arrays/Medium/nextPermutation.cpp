@@ -23,6 +23,7 @@
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
-        
+        next_permutation(nums.begin(), nums.end());                // using the STL function next_permutation.
     }
 };
+
